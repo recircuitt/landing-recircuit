@@ -1,8 +1,17 @@
-<p>Nuestros beneficios</p>
+<section id="beneficios" class="w-full bg-gray-50 py-20 px-6 md:px-16 lg:px-24">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center md:text-left mb-16 max-w-2xl">
+            <span class="text-green-700 font-extrabold text-sm uppercase tracking-widest block mb-2">Ventajas Estratégicas</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Impacto sostenible y eficiencia operativa</h2>
+        </div>
 
-<!-- Beneficios -->
-<div>
-    <p>Impacto Ambiental Real: Reducís la huella de carbono y evitás que el plástico y los metales pesados terminen en un basural.</p>
-    <p>Personalización Absoluta: No es hardware genérico. Diseñamos y adaptamos cada componente para que cumpla con la función exacta que vos o tu empresa necesitan.</p>
-    <p>Ahorro Inteligente (Upcycling): Maximizás el valor de tu inversión inicial extendiendo el ciclo de vida de materiales que ya dabas por perdidos.</p>
-</div>
+        <!-- Renderizado dinámico usando la nueva sintaxis de control de flujo de Angular -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            @for (item of benefits; track item.title) {
+                <app-benefit-card [benefit]="item"></app-benefit-card>
+            }
+        </div>
+
+    </div>
+</section>
