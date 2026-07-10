@@ -1,12 +1,36 @@
-<nav>
+<nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50 px-6 py-4 md:px-16 lg:px-24 flex items-center justify-between">
+    
+    <!-- Logo / Marca -->
+  <img src="ELUFKA-icon.png" class="h-16 w-16" >
 
-    <p>RECIRCUIT</p>
-
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotros">¿Que hacemos?</a></li>
-        <li><a href="#servicios">Impacto</a></li>
-        <li><a href="#contacto">Preguntas frecuentes</a></li>
-        <li><button>Solicitar presupuesto</button></li>
+    <!-- Menú de Navegación -->
+    <ul class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+        <li>
+            <a href="#inicio" class="hover:text-green-700 transition-colors duration-200">Inicio</a>
+        </li>
+        <li>
+            <a href="#que-hacemos" class="hover:text-green-700 transition-colors duration-200">¿Qué hacemos?</a>
+        </li>
+        <li>
+            <a href="#impacto" class="hover:text-green-700 transition-colors duration-200">Impacto</a>
+        </li>
+        <li>
+            <a href="#faq" class="hover:text-green-700 transition-colors duration-200">Preguntas frecuentes</a>
+        </li>
     </ul>
+
+    <!-- Botón de Acción Principal (CTA Navbar) -->
+    <div class="hidden md:block">
+        <button class="bg-green-700 hover:bg-green-800 transition-colors duration-200 px-5 py-2.5 rounded-md text-white font-bold text-sm shadow-sm active:scale-95 transform">
+            Solicitar presupuesto
+        </button>
+    </div>
+
+    <!-- 
+      Nota técnica: Si más adelante necesitás un menú hamburguesa para celulares, 
+      podés usar la clase `md:hidden` en un botón de menú aquí abajo.
+    -->
 </nav>
+
+<!-- Div de compensación para que el contenido del Hero no se tape por la Navbar fija -->
+<div class="h-16"></div>

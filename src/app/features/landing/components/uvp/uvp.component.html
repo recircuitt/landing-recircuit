@@ -1,2 +1,28 @@
-<!-- Texto -->
-<p>Por cada componente que recibimos, nuestro equipo cuida el ambiente y desarrolla una solución a tu medida. No solo protegemos el planeta: convertimos tu hardware en una idea totalmente personalizada.</p>
+<section id="que-hacemos" class="w-full bg-white py-20 px-6 md:px-16 lg:px-24 border-b border-gray-100">
+    <div class="max-w-4xl mx-auto text-center flex flex-col gap-6">
+        
+        <!-- Etiqueta estática superior -->
+        <span class="text-green-700 font-extrabold text-sm uppercase tracking-widest">
+            Propuesta de Valor Única
+        </span>
+
+        <!-- Contenedor del Carrusel de Texto con altura mínima fija para evitar saltos de layout -->
+        <div class="min-h-[160px] sm:min-h-[120px] flex items-center justify-center">
+            <p 
+                [innerHTML]="statements[currentIndex]"
+                class="text-gray-800 font-medium text-xl sm:text-2xl lg:text-3xl leading-relaxed tracking-tight transition-all duration-300 ease-in-out"
+                [ngClass]="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'">
+            </p>
+        </div>
+
+        <div class="flex justify-center gap-2 mt-4">
+            @for (statement of statements; track $index) {
+                <div 
+                    class="h-1 rounded-full transition-all duration-200"
+                    [ngClass]="$index === currentIndex ? 'w-8 bg-green-700' : 'w-2 bg-gray-200'">
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

@@ -1,8 +1,37 @@
-<!-- Titulo principal-->
-<p>Tus componentes viejos, transformados en soluciones únicas.</p>
+<div class="min-h-[80vh] w-full bg-gray-100 flex flex-col md:flex-row items-center justify-between px-6 py-12 md:px-16 lg:px-24 gap-10 md:gap-14"
+    id="inicio">
 
-<!-- Subititulo-->
-<p>Reducimos el impacto ambiental dando una segunda vida a tu hardware. Convertimos lo que ya no usás en tecnología personalizada, eficiente y sustentable.</p>
+    <!-- Lado izquierdo: Contenido -->
+    <!-- Agregamos order-1 para asegurarnos de que en mobile se mantenga como bloque principal, o podés alternarlo si querés la foto primero -->
+    <div class="flex-1 flex flex-col justify-center text-center md:text-left max-w-2xl order-1 md:order-none">
 
-<!-- CTA inmediato-->
-<button>Solicitar presupuesto</button>
+        <!-- Título principal: Ajustado de text-3xl a text-4xl en sm, y luego 6xl en pantallas grandes -->
+        <h1 class="font-extrabold text-3xl sm:text-5xl lg:text-6xl text-green-700 leading-tight tracking-tight">
+            Rediseñamos el futuro de la tecnología
+        </h1>
+
+        <!-- Subtítulo y CTA: gap adaptativo para no separar tanto los elementos en pantallas chicas -->
+        <div class="pt-5 sm:pt-8 flex flex-col items-center md:items-start gap-5 sm:gap-6">
+            <p class="text-gray-600 text-base sm:text-xl leading-relaxed">
+                En <span class="font-bold text-gray-800">ELUFKA</span> revolucionamos la gestión de residuos
+                tecnológicos. Rescatamos componentes en desuso para ensamblar hardware personalizado y desarrollamos
+                software eco-inteligente que optimiza el impacto ambiental de tu organización.
+            </p>
+
+    
+            <button
+                class="w-full md:w-auto bg-green-700 hover:bg-green-800 transition-colors duration-200 px-6 py-3.5 rounded-xl text-white font-bold text-base sm:text-lg shadow-md active:scale-[0.98] transform">
+                <a href="https://wa.me/2233009292?
+            text=Hola,%20quiero%20solicitar%20un%20proyecto!." target="_blank">Solicitar presupuesto</a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Lado derecho: Imagen promocional -->
+    <!-- max-w-md en mobile evita que la ilustración gigante ocupe toda la pantalla del celular verticalmente -->
+    <div class="flex-1 w-full max-w-md md:max-w-2xl flex items-center justify-center order-2 md:order-none">
+        <img src="/header-img.png" alt="Ilustración tecnológica circular ELUFKA"
+            class="w-full h-auto object-contain max-h-[300px] sm:max-h-[450px] pointer-events-none drop-shadow-sm">
+    </div>
+
+</div>
