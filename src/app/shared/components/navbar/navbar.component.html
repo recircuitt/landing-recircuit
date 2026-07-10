@@ -1,36 +1,57 @@
-<nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50 px-6 py-4 md:px-16 lg:px-24 flex items-center justify-between">
+<nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50 px-6 py-3.5 md:px-16 lg:px-24 flex items-center justify-between">
     
-    <!-- Logo / Marca -->
-  <img src="ELUFKA-icon.png" class="h-16 w-16" >
+    <!-- Logo  -->
+    <a href="#inicio" (click)="closeMenu()" class="flex items-center">
+        <img src="ELUFKA-icon.png" class="h-12 w-12 sm:h-20 sm:w-20 object-contain" alt="Logo ELUFKA">
+    </a>
 
-    <!-- Menú de Navegación -->
+    <!-- Menú de Navegación (Desktop) -->
     <ul class="hidden md:flex items-center gap-8 font-medium text-gray-600">
-        <li>
-            <a href="#inicio" class="hover:text-green-700 transition-colors duration-200">Inicio</a>
-        </li>
-        <li>
-            <a href="#que-hacemos" class="hover:text-green-700 transition-colors duration-200">¿Qué hacemos?</a>
-        </li>
-        <li>
-            <a href="#impacto" class="hover:text-green-700 transition-colors duration-200">Impacto</a>
-        </li>
-        <li>
-            <a href="#faq" class="hover:text-green-700 transition-colors duration-200">Preguntas frecuentes</a>
-        </li>
+        <li><a href="#inicio" class="hover:text-green-700 transition-colors duration-200">Inicio</a></li>
+        <li><a href="#que-hacemos" class="hover:text-green-700 transition-colors duration-200">¿Qué hacemos?</a></li>
+        <li><a href="#impacto" class="hover:text-green-700 transition-colors duration-200">Impacto</a></li>
+        <li><a href="#faq" class="hover:text-green-700 transition-colors duration-200">Preguntas frecuentes</a></li>
     </ul>
 
-    <!-- Botón de Acción Principal (CTA Navbar) -->
+    <!-- Botón de Acción Principal (Desktop) -->
     <div class="hidden md:block">
-        <button class="bg-green-700 hover:bg-green-800 transition-colors duration-200 px-5 py-2.5 rounded-md text-white font-bold text-sm shadow-sm active:scale-95 transform">
-            Solicitar presupuesto
+        <button class="bg-green-700 hover:bg-green-800 transition-colors duration-200 px-5 py-2.5 rounded-xl text-white font-bold text-sm shadow-sm active:scale-95 transform">
+            <a href="https://wa.me/2233009292?
+            text=Hola,%20quiero%20solicitar%20un%20proyecto!." target="_blank">Solicitar presupuesto</a>
         </button>
     </div>
 
-    <!-- 
-      Nota técnica: Si más adelante necesitás un menú hamburguesa para celulares, 
-      podés usar la clase `md:hidden` en un botón de menú aquí abajo.
-    -->
+    <!-- Botón Hamburguesa (Mobile-only) -->
+    <button (click)="toggleMenu()" class="flex flex-col gap-1.5 md:hidden justify-center items-center w-8 h-8 z-50 relative focus:outline-none" aria-label="Abrir menú">
+        <!-- Animación de las líneas controlada por Angular -->
+        <span class="w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 transform origin-center"
+              [ngClass]="{'rotate-45 translate-y-2': isMenuOpen}"></span>
+        <span class="w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300"
+              [ngClass]="{'opacity-0': isMenuOpen}"></span>
+        <span class="w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 transform origin-center"
+              [ngClass]="{'-rotate-45 -translate-y-2': isMenuOpen}"></span>
+    </button>
+
+    <!-- Menú Desplegable Mobile -->
+    <div class="fixed top-0 right-0 h-screen w-4/5 sm:w-1/2 bg-white/95 backdrop-blur-lg shadow-2xl border-l border-gray-100 p-8 flex flex-col gap-8 transition-transform duration-300 transform md:hidden z-40"
+         [ngClass]="isMenuOpen ? 'translate-x-0' : 'translate-x-full'">
+        
+        <span class="text-xs font-bold text-green-700 uppercase tracking-widest border-b border-gray-100 pb-2 mt-12">ELUFKA</span>
+        
+        <ul class="flex flex-col gap-6 font-semibold text-lg text-gray-800">
+            <li><a href="#inicio" (click)="closeMenu()" class="hover:text-green-700 transition-colors">Inicio</a></li>
+            <li><a href="#que-hacemos" (click)="closeMenu()" class="hover:text-green-700 transition-colors">¿Qué hacemos?</a></li>
+            <li><a href="#impacto" (click)="closeMenu()" class="hover:text-green-700 transition-colors">Impacto</a></li>
+            <li><a href="#faq" (click)="closeMenu()" class="hover:text-green-700 transition-colors">Preguntas frecuentes</a></li>
+        </ul>
+        
+        <div class="mt-auto border-t border-gray-100 pt-6">
+            <button class="w-full bg-green-700 hover:bg-green-800 px-5 py-3 rounded-xl text-white font-bold text-base shadow-sm active:scale-[0.98] transition-transform">
+                Solicitar presupuesto
+            </button>
+        </div>
+    </div>
+
 </nav>
 
-<!-- Div de compensación para que el contenido del Hero no se tape por la Navbar fija -->
-<div class="h-16"></div>
+<div class="h-[76px] sm:h-[96px]"></div>

@@ -1,22 +1,34 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'cta',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './cta.component.html',
   styleUrl: './cta.component.css'
 })
 export class CtaComponent {
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
     sendEmail(event:Event){
     event.preventDefault();
 
-      emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', event.target as HTMLFormElement, 'TU_PUBLIC_KEY')
+      emailjs.sendForm('service_wy20qxh', 'template_x29py1f', event.target as HTMLFormElement, 'rPz1Udpgo-Vl-BsqT')
       .then(() => {
-        alert('¡Correo enviado con éxito!');
+        console.log("Enviado con exito")
       }, (error) => {
         console.error('Error al enviar:', error);
       });
+
+      this.resetForm();
+  }
+
+  resetForm() {
+    this.formData = { name: '', email: '', message: '' };
   }
 }
