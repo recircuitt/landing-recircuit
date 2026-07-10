@@ -1,1 +1,5 @@
-Elufka Landing
+ELUFKA es una startup de triple impacto que nace con la misión de revolucionar la gestión de residuos tecnológicos. Nos dedicamos a la transformación de componentes electrónicos en desuso, rescatando materiales que el mercado considera obsoletos para rediseñarlos y ensamblarlos en productos a medida.
+Lo que antes era "basura electrónica", lo transformamos en soluciones funcionales, hardware personalizado y dispositivos con alto valor añadido.
+Nuestras Líneas de Acción
+Upcycling Electrónico: Diseñamos y fabricamos productos tecnológicos a pedido, adaptados a los requerimientos operativos de corporaciones y organismos públicos, reduciendo drásticamente sus costos y su huella de carbono.
+Software Eco-Inteligente: Desarrollamos plataformas digitales y herramientas de software especializadas en el cuidado ambiental. Nuestras aplicaciones permiten a las organizaciones medir, gestionar y optimizar su impacto ecológico, facilitando la transición hacia normativas verdes y prácticas más sostenibles.
